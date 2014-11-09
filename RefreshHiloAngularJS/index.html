@@ -27,7 +27,7 @@
             </div>
         </div>
     </nav>
-    <div class="container" role="main" ng-controller="myController">
+    <div class="container" role="main" ng-controller="myController as ctrl">
         <div class="jumbotron">
             <h1>Secret Santa!</h1>
             <p>This is the world's best secret santa app where all of your wishes are guaranteed to come true.</p>
@@ -35,12 +35,12 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th ng-click="sort('name')">Name</th>
-                    <th ng-click="sort('gifts.length')">Number of Gifts</th>
+                    <th ng-click="ctrl.sort('name')">Name</th>
+                    <th ng-click="ctrl.sort('gifts.length')">Number of Gifts</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="person in people | orderBy:sortBy:reverse" ng-click="setCurrentUser(person)">
+                <tr ng-repeat="person in ctrl.people | orderBy:ctrl.sortBy:ctrl.reverse" ng-click="ctrl.setCurrentUser(person)">
                     <td>{{person.name}}</td>
                     <td>{{person.gifts.length}}</td>
                 </tr>
@@ -56,7 +56,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="gift in currentPerson.gifts">
+                <tr ng-repeat="gift in ctrl.currentPerson.gifts">
                     <td>{{gift.name}}</td>
                     <td>{{gift.description}}</td>
                     <td>{{gift.price | currency}}</td>

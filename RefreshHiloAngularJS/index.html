@@ -8,7 +8,7 @@
     <link href="styles/bootstrap/bootstrap.css" rel="stylesheet" />
     <link href="styles/style.css" rel="stylesheet" />
 </head>
-<body ng-app role="document">
+<body ng-app="myApp" role="document">
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -27,10 +27,7 @@
             </div>
         </div>
     </nav>
-    <div class="container" role="main" ng-init="sortBy='name'; reverse=false; currentPerson.gifts = []; people = [{name: 'Inigo Montoya', gifts: [{name: 'My Father', description: 'I just want my father back', price: 'priceless', enteredOn: '2014-11-05'}, {name: 'Six Fingered Man', description: 'He killed my father, he should prepare to die', price: '5000', enteredOn: '2014-11-06'}]},
-         {name: 'Princess Buttercup', gifts: [{name: 'Rodent of Unusual Size', description: 'These are really cool', price: '300', enteredOn: '2014-10-30'}]},
-         {name: 'Fezzik', gifts: [{name: 'Dr. Seuss Books', description: 'Best rhyming books around. Get these please.', price: '20', enteredOn: '2013-11-05'}, {name: 'Big rocks', description: 'They are a lot of fun to throw', price: '2', enteredOn: '2014-09-05'}]},
-         {name: 'Westley', gifts: [{name: '50 years of memories', description: 'I lost these somewhere along the way, would love to get them back', price: '50000', enteredOn: 'N/A'}, {name: 'Miracle Pill', description: 'It tastes good in chocolate', price: '65', enteredOn: '2014-08-06'}, {name: 'Brute Squad', description: 'Need it so we can storm the castle', price: '200', enteredOn: '2014-08-07'}]}]">
+    <div class="container" role="main" ng-controller="myController">
         <div class="jumbotron">
             <h1>Secret Santa!</h1>
             <p>This is the world's best secret santa app where all of your wishes are guaranteed to come true.</p>
@@ -38,12 +35,12 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th ng-click="sortBy='name';reverse=!reverse">Name</th>
-                    <th ng-click="sortBy='gifts.length';reverse=!reverse">Number of Gifts</th>
+                    <th ng-click="sort('name')">Name</th>
+                    <th ng-click="sort('gifts.length')">Number of Gifts</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="person in people | orderBy:sortBy:reverse" ng-click="currentPerson.gifts = person.gifts">
+                <tr ng-repeat="person in people | orderBy:sortBy:reverse" ng-click="setCurrentUser(person)">
                     <td>{{person.name}}</td>
                     <td>{{person.gifts.length}}</td>
                 </tr>
@@ -70,5 +67,6 @@
     </div>
     <script src="Scripts/angular/angular.js"></script>
     <script src="Scripts/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="Scripts/app.js"></script>
 </body>
 </html>

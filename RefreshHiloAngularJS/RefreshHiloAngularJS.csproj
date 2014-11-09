@@ -73,6 +73,7 @@
     <Content Include="Scripts\angular-bootstrap\ui-bootstrap.js" />
     <Content Include="Scripts\angular-bootstrap\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular\angular.js" />
+    <Content Include="Scripts\app.js" />
     <Content Include="styles\bootstrap\bootstrap.css" />
     <Content Include="styles\style.css" />
     <Content Include="Web.config" />

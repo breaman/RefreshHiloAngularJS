@@ -1,0 +1,37 @@
+{
+    "name": "RefreshHiloAngularJS",
+    "version": "0.0.0",
+    "authors": [
+        "Michael Stokesbary <mike@stokesbary.me>"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "exportsOverride": {
+        "jquery": { },
+        "bootstrap": {
+            "styles": "dist/css/bootstrap.css",
+            "fonts": "dist/fonts/*.*"
+        },
+        "angular": {
+            "Scripts": "angular.js"
+        },
+        "angular-route": {
+            "Scripts": "angular-route.js"
+        },
+        "angular-animate": {
+            "Scripts": "angular-animate.js"
+        },
+        "angular-messages": {
+            "Scripts": "angular-messages.js"
+        },
+        "angular-bootstrap": {
+            "Scripts": [ "ui-bootstrap.min.js", "ui-bootstrap.js" ]
+        }
+    }
+}

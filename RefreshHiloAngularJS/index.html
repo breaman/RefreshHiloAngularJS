@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AngularJS Directives</title>
+    <link href="styles/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="styles/style.css" rel="stylesheet" />
+</head>
+<body role="document">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Secret Santa</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container" role="main">
+        <div class="jumbotron">
+            <h1>Secret Santa!</h1>
+            <p>This is the world's best secret santa app where all of your wishes are guaranteed to come true.</p>
+        </div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Number of Gifts</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Inigo Montoya</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Princess Buttercup</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Fezzik</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Westley</td>
+                    <td>2</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Gift</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Entered On</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>My Father</td>
+                    <td>I just want my father back</td>
+                    <td>Priceless</td>
+                    <td>2014-11-5</td>
+                </tr>
+                <tr>
+                    <td>Rodent of Unusual Size</td>
+                    <td>These are really cool</td>
+                    <td>300</td>
+                    <td>2014-10-30</td>
+                </tr>
+                <tr>
+                    <td>Dr. Seuss Books</td>
+                    <td>Best rhyming books around. Get these please.</td>
+                    <td>5</td>
+                    <td>2013-11-5</td>
+                </tr>
+                <tr>
+                    <td>50 years of memories</td>
+                    <td>I lost these somewhere along the way, would love to get them back.</td>
+                    <td>50000</td>
+                    <td>N/A</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="Scripts/angular/angular.js"></script>
+    <script src="Scripts/angular-bootstrap/ui-bootstrap.min.js"></script>
+</body>
+</html>

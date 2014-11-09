@@ -1,5 +1,16 @@
 ﻿(function () {
-    angular.module('myApp', []);
+    angular.module('myApp', ['ngRoute']);
+
+    angular.module('myApp').config(MyConfig);
+
+    function MyConfig($routeProvider) {
+        $routeProvider.when('/', {
+            templateUrl: 'wishlist.html',
+            controller: 'myController',
+            controllerAs: 'ctrl'
+        })
+        .otherwise('/');
+    }
 
     angular.module('myApp').controller('myController', MyController);
 

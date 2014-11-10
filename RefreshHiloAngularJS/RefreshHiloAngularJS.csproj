@@ -60,6 +60,8 @@
     <Content Include="fonts\bootstrap\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\bootstrap\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="newItem.html" />
+    <Content Include="Scripts\angular-messages\angular-messages.js" />
     <Content Include="wishlist.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -1,0 +1,30 @@
+﻿<form name="newItemForm" ng-submit="newCtrl.saveItem(newItemForm.$valid)" novalidate>
+    <div class="form-group">
+        <label class="control-label">Name</label>
+        <input type="text" name="giftName" ng-model="newCtrl.gift.name" class="form-control" required />
+        <div ng-if="newItemForm.giftName.$touched || newItemForm.$submitted" ng-messages="newItemForm.giftName.$error">
+            <div ng-message="required">You must enter a name for the gift.</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Description</label>
+        <input type="text" name="description" ng-model="newCtrl.gift.description" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label class="control-label">Price</label>
+        <input type="number" name="price" ng-model="newCtrl.gift.price" class="form-control" min="0" max="2000000" required />
+        <div ng-if="newItemForm.price.$touched || newItemForm.$submitted" ng-messages="newItemForm.price.$error">
+            <div ng-message="required">You must enter a price for the gift.</div>
+            <div ng-message="min">Your gift must be worth at least something.</div>
+            <div ng-message="max">Sorry, but there is no way any secret santa will buy a gift that is that much.</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Entered On</label>
+        <input type="date" name="enteredOn" ng-model="newCtrl.gift.enteredOn" class="form-control" />
+        <div ng-if="newItemForm.enteredOn.$touched || newItemForm.$submitted" ng-messages="newItemForm.enteredOn.$error">
+            <div ng-message="date">You must enter a valid date.</div>
+        </div>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary" />
+</form>

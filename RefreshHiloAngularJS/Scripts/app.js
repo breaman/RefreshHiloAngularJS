@@ -1,7 +1,10 @@
 ﻿(function () {
-    angular.module('myApp', ['ngRoute']);
+    angular.module('myApp', ['ngRoute', 'ngMessages']);
 
     angular.module('myApp').config(MyConfig);
+
+    angular.module('myApp').controller('myController', MyController);
+    angular.module('myApp').controller('newItemController', NewItemController);
 
     function MyConfig($routeProvider) {
         $routeProvider.when('/', {
@@ -9,10 +12,13 @@
             controller: 'myController',
             controllerAs: 'ctrl'
         })
+        .when('/new', {
+            templateUrl: 'newItem.html',
+            controller: 'newItemController',
+            controllerAs: 'newCtrl'
+        })
         .otherwise('/');
     }
-
-    angular.module('myApp').controller('myController', MyController);
 
     function MyController() {
         var vm = this;
@@ -33,6 +39,21 @@
         vm.sort = function (columnName) {
             vm.sortBy = columnName;
             vm.reverse = !vm.reverse;
+        }
+    }
+
+    function NewItemController() {
+        var vm = this;
+        vm.gift = {};
+        vm.gift.enteredOn = new Date();
+
+        vm.saveItem = function (isValid) {
+            if (isValid) {
+                alert('submitting: ' + JSON.stringify(vm.gift));
+            }
+            else {
+                alert('I was clicked and am invalid');
+            }
         }
     }
 })();

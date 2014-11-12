@@ -12,7 +12,7 @@
             controller: 'myController',
             controllerAs: 'ctrl'
         })
-        .when('/new', {
+        .when('/new/:name', {
             templateUrl: 'newItem.html',
             controller: 'newItemController',
             controllerAs: 'newCtrl'
@@ -42,10 +42,12 @@
         }
     }
 
-    function NewItemController() {
+    function NewItemController($routeParams) {
         var vm = this;
+        vm.person = {};
         vm.gift = {};
         vm.gift.enteredOn = new Date();
+        vm.person.name = $routeParams.name;
 
         vm.saveItem = function (isValid) {
             if (isValid) {

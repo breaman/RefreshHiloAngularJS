@@ -3,12 +3,14 @@
         <tr>
             <th ng-click="ctrl.sort('name')">Name</th>
             <th ng-click="ctrl.sort('gifts.length')">Number of Gifts</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
         <tr ng-repeat="person in ctrl.people | orderBy:ctrl.sortBy:ctrl.reverse" ng-click="ctrl.setCurrentUser(person)">
             <td>{{person.name}}</td>
             <td>{{person.gifts.length}}</td>
+            <td><a ng-href="#/new/{{person.name}}" class="btn">Add New Item</a></td>
         </tr>
     </tbody>
 </table>
@@ -26,7 +28,7 @@
             <td>{{gift.name}}</td>
             <td>{{gift.description}}</td>
             <td>{{gift.price | currency}}</td>
-            <td>{{gift.enteredOn | date}}</td>
+            <td>{{gift.enteredOn | date:'MM/dd/yyyy'}}</td>
         </tr>
     </tbody>
 </table>
